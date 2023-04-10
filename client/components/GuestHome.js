@@ -1,9 +1,9 @@
-import React from "react";
-import { connect } from "react-redux";
-import AllProducts from "./AllProducts";
-import Carousel from "./Carousel";
-import { getProducts } from "../store/products";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { connect } from 'react-redux';
+import AllProducts from './AllProducts';
+import Carousel from './Carousel';
+import { getProducts } from '../store/products';
+import { Link } from 'react-router-dom';
 
 //~~~~> TODO: NOT SURE WHY TRENDING PRODUCT LINKS AREN'T WORKING
 
@@ -26,7 +26,11 @@ class GuestHome extends React.Component {
         <div className="container-sm">
           <div className="row">
             <Link to="/products">
-              <button type="button" className="btn btn-primary">
+              <button
+                data-cy="shop-all-plants-btn"
+                type="button"
+                className="btn btn-primary"
+              >
                 Shop All Plants
               </button>
             </Link>
@@ -45,7 +49,11 @@ class GuestHome extends React.Component {
                 <p>{product.price}</p>
 
                 <Link to={`/products/${product.id}`}>
-                  <button className="btn btn-primary" type="button">
+                  <button
+                    data-cy="view-plant-btn"
+                    className="btn btn-primary"
+                    type="button"
+                  >
                     View Plant
                   </button>
                 </Link>
